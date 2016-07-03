@@ -1,0 +1,297 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Pseudo Elements in CSS</title>
+    <link rel="stylesheet" href="/dist/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-background-color="#e7ad52">
+          <h1>Pseudo Elements</h1>
+          <h2>Ipek Turgul</h2>
+          <h3>@ipekturgul</h3>
+          <span>2 June 2016</span>
+        </section>
+        <section>
+          <h2>How many pseudo elements are there?</h2>
+        </section>
+        <section>
+            <div style="font-size:1.2em">
+              <p class="fragment highlight-red" data-fragment-index="2">:first-letter</p>
+              <p class="fragment highlight-red" data-fragment-index="2">:first-line</p>
+              <p class="fragment highlight-red" data-fragment-index="2">::selection</p>
+              <p class="fragment highlight-current-blue" data-fragment-index="1">:spelling-error</p>
+              <p class="fragment highlight-current-blue" data-fragment-index="1">:grammar-error </p>
+            </div>
+            <div style="font-size:1.2em">
+              <p class="fragment highlight-red" data-fragment-index="2">:after</p>
+              <p class="fragment highlight-red" data-fragment-index="2">:before</p>
+              <p class="fragment highlight-current-blue" data-fragment-index="1">:placeholder</p>
+              <p class="fragment highlight-current-blue" data-fragment-index="1">:marker</p>
+              <p class="fragment highlight-red" data-fragment-index="2">:backdrop</p>
+            </div>
+        </section>
+        <section data-background-color="#e7ad52">
+          <h1>Typographic pseudo elements</h1>
+        </section>
+        <section>
+          <h1>:first-letter</h1>
+          <p class="fragment fade-up" data-fragment-index="1">To select first letter of a block</p>
+          <p class="fragment fade-up" data-fragment-index="2"><span class="fragment highlight-blue" data-fragment-index="2">ALL</span> font, background, padding, margin and border properties</p>
+          <p class="fragment fade-up" data-fragment-index="3">Color and some of the text properties</p>
+        </section>
+        <section>
+          <div class="col-2-x4"><img src="/images/first-letter.png" alt="first-letter-example"></div>
+<div class="col-2x-4"><pre class="scss fragment fade-up text--large"><code data-trim>
+.ex-1:first-letter {
+  font-size: 4em;
+  line-height: 0;
+}
+</code></pre></div>
+          <a href="http://codepen.io/ipekt/pen/GqRMMo" style="display:none">Link</a>
+        </section>
+        <section>
+          <div class="col-2x-4">  <img src="/images/first-letter2.png" alt="first-letter-example-cat"></div>
+<div class="col-2x-4"><pre class="scss fragment fade-up text--large"><code data-trim>
+p:first-letter {
+  font-size: 8em;
+  line-height: 0;
+  text-shadow: 5px 5px 0 blue;
+  background-image: url('cat.jpg');
+  background-repeat: no-repeat;
+  font-family: fantasy;
+}
+</code></pre></div>
+          <a href="http://codepen.io/ipekt/pen/wGVRZo" style="display:none">Link</a>
+        </section>
+        <section>
+          <h1>:first-line</h1>
+          <p class="fragment fade-up" data-fragment-index="2"><span class="fragment highlight-blue" data-fragment-index="2">ALL</span> font and background</p>
+          <p class="fragment fade-up">color, some text styles</p>
+        </section>
+        <section>
+        <div class="col-x2-4">  <img src="/images/first-line-simple.png" alt="first-line-simple"></div>
+<div class="col-2x-4"><pre class="scss fragment fade-up text--large"><code data-trim>
+p:first-line {
+  color: blue;
+  font-size: 2em;
+}
+</code></pre>
+</div>
+          <a href="http://codepen.io/ipekt/pen/BzampY" style="display:none">Link</a>
+        </section>
+        <section>
+          <div class="col-2x-4">  <img src="/images/first-line.gif" alt="first-line-rainbow"></div>
+            <div class="col-2x-4">
+<pre class="scss fragment fade-up text--large"><code data-trim>
+p:first-line {
+  background-image: url('rainbow.png');
+  color: blue;
+  font-size: 2em;
+  background-position: 100% 50%;
+  background-size: 100% 1.5em;
+}
+</code></pre>
+          </div>
+          <a href="http://codepen.io/ipekt/pen/VjwrjK" style="display:none">Link</a>
+        </section>
+        <section data-background-color="#e7ad52">
+          <h1>Highlight pseudo elements</h1>
+        </section>
+        <section>
+          <h1>::selection</h1>
+          <p class="fragment fade-up">To highlight selected part of UI</p>
+          <p class="fragment fade-up">color, background-color, cursor, outline, text-decoration, text-emphasis-color and text-shadow</p>
+        </section>
+        <section>
+          <div class="col-2x-4"><p class="selection--simple">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi odit, magnam architecto, voluptas voluptatum, vitae enim non provident quaerat</p></div>
+            <div class="col-2x-4">
+<pre class="scss text--large"><code data-trim>
+p::selection {
+  background: #27ae60;
+  color: #f3d7ac;
+}
+</code></pre>
+          </div>
+        </section>
+        <section>
+          <div class="col-m2-4"><p class="selection--gross">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi odit, magnam architecto, voluptas voluptatum, vitae enim non provident quaerat</p></div>
+            <div class="col-m2-4">
+<pre class="scss text--large"><code data-trim>
+p::selection {
+  background: #000;
+  color: #000;
+  text-shadow: 1px 1px 0 red, 2px 2px 0 orange,
+               3px 3px 0 yellow, 4px 4px 0 green,
+               5px 5px 0 blue, 6px 6px 0 indigo,
+               7px 7px 0 violet;
+}
+</code></pre>
+          </div>
+        </section>
+        <section data-background-color="#e7ad52">
+          <h1>Tree-Abiding pseudo elements</h1>
+        </section>
+        <section>
+          <h1>:backdrop</h1>
+          <p class="fragment fade-up" data-fragment-index="1">to create backdrop to hide content behind, <span class="fragment highlight-blue" data-fragment-index="1">top layered</span> element</p>
+          <p class="fragment fade-up" data-fragment-index="2">to use with <span class="fragment highlight-blue" data-fragment-index="2">&#60;dialog&#62;</span> element and <span class="fragment highlight-blue" data-fragment-index="2">:fullscreen</span> selector</p>
+          <p class="fragment fade-up">Chrome supports on dialog</p>
+        </section>
+        <section>
+
+<pre class="html text--large"><code data-trim>
+<button id="show">show dialog</button>
+
+<dialog class="ex1">
+  <p>hello</p>
+  <button id="close">close</button>
+</dialog>
+</code></pre>
+<pre class="scss fragment fade-up text--large"><code data-trim>
+.ex1 {
+  width: 200px;
+  height: 100px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -150px;
+}
+.ex1:backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+          </code></pre>
+        </section>
+        <section>
+            <img src="/images/backdrop-ed.gif" alt="">
+            <a href="http://codepen.io/ipekt/pen/RRwjEx" style="display:none">Link</a>
+        </section>
+        <section>
+          <h1>:before & :after</h1>
+          <p class="fragment fade-up" data-fragment-index="1">Creates a box if content value is <span class="fragment highlight-red" data-fragment-index="1">not none</span> </p>
+          <p class="fragment fade-up" data-fragment-index="2"><span class="fragment highlight-blue" data-fragment-index="2">Inline</span> by default & inherits all <span class="fragment highlight-blue" data-fragment-index="2">inheritable</span> styles</p>
+          <p class="fragment fade-up" data-fragment-index="3">doesn’t work with <span class="fragment highlight-blue" data-fragment-index="2">replaced elements</span> such as img or textarea</p>
+        </section>
+        <section>
+          <div class="col-1-4">
+            <div class="ex1">
+              <i class="pied-piper"
+                 aria-hidden="true"></i>
+              pied piper
+            </div>
+          </div>
+<div class="col-3-4">
+<pre class="html text--medium"><code data-trim>
+<div class="circular">
+ <i class="pied-piper" aria-hidden="true"></i>
+  pied piper
+</div>
+</code></pre>
+<pre class="css text--medium"><code data-trim>
+.circular {
+  background-color: #8bc046;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1.5em;
+  height: 150px;
+  padding: 1em;
+  text-align: center;
+  width: 150px;
+}
+.pied-piper {
+  display: block;
+  font-family: FontAwesome;
+}
+.pied-piper:before {
+  content: "\f2ae";
+  font-size: 3.5em;
+}
+</code></pre>
+          </div>
+          <a href="http://codepen.io/ipekt/pen/YWzYqL" style="display:none">Link</a>
+        </section>
+        <section>
+          <div class="clearfix col-1-4">
+            <div class="margin-btm"><div class="magnifying-glass"></div></div>
+          </div>
+          <a href="https://css-tricks.com/examples/ShapesOfCSS/" style="display:none">Link</a>
+          <div class="col-3-4">
+          <pre class="html text--medium"><code data-trim>
+            <div class="magnifying-glass"></div>
+
+          </code></pre>
+<pre class="css text--medium"><code data-trim>
+.magnifying-glass {
+  font-size: 10em;
+  display: block;
+  width: 0.4em;
+  height: 0.4em;
+  border: 0.1em solid #00BFFF;
+  position: relative;
+  border-radius: 0.35em;
+}
+
+.magnifying-glass:before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  right: -0.25em;
+  bottom: -0.1em;
+  border-width: 0;
+  background: #00BFFF;
+  width: 0.35em;
+  height: 0.08em;
+  transform: rotate(45deg);
+}
+</code></pre>
+         </div>
+        </section>
+        <section>
+          <h1>Single Div</h1>
+          <img src="/images/single-div.png" alt="">
+          <b>by Lynn Fisher <a href="http://a.singlediv.com/">a.singlediv</a></b>
+        </section>
+        <section data-background-image="/images/pjimage.jpg">
+        </section>
+        <section>
+          <h1>When should they be used?</h1>
+            <p class="fragment fade-up">Pure decoration, visual only</p>
+            <p class="fragment fade-up">Page still makes sense</p>
+            <p class="fragment fade-up">aria-hidden=true</p>
+        </section>
+        <section>
+          <h1>Summary</h1>
+          <p class="fragment fade-up" data-fragment-index="1"><span class="fragment highlight-red" data-fragment-index="1">5.5</span> elements ready to use</p>
+          <p class="fragment fade-up">Solve style problems better than any other trick or js</p>
+          <p class="fragment fade-up">Accessibility is important</p>
+        </section>
+        <section data-background-color="#e7ad52">
+          <h1>Thank you</h1>
+          <p>pseudo-elements.surge.sh</p>
+        </section>
+      </div>
+    </div>
+
+    <script src="/dist/script.js"></script>
+
+    <script>
+      // More info https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        history: true,
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+
+          { src: '/dist/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ]
+      });
+    </script>
+  </body>
+</html>

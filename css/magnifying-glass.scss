@@ -1,0 +1,25 @@
+/* https://css-tricks.com/examples/ShapesOfCSS/ */
+
+/* to overwrite revealjs css*/
+div.magnifying-glass {
+ font-size: 10em;
+ display: block;
+ width: 0.4em;
+ height: 0.4em;
+ border: 0.1em solid #00BFFF;
+ position: relative;
+ border-radius: 0.35em;
+}
+
+.magnifying-glass:before {
+ content: "";
+ display: inline-block;
+ position: absolute;
+ right: -0.25em;
+ bottom: -0.1em;
+ border-width: 0;
+ background: #00BFFF;
+ width: 0.35em;
+ height: 0.08em;
+ transform: rotate(45deg);
+}

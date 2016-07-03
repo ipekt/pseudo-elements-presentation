@@ -1,0 +1,20 @@
+{
+  "name": "pseudo_elements",
+  "version": "1.0.0",
+  "homepage": "https://github.com/ipekt/pseudo_elements",
+  "authors": [
+    "ipek <ipek.turgul@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "reveal.js": "~3.2.0",
+    "highlightjs": "~9.0.0"
+  }
+}

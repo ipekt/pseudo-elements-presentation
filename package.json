@@ -1,0 +1,20 @@
+{
+  "name": "pseudo_elements",
+  "version": "1.0.0",
+  "description": "pseudo elements presentation",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "npm run build && surge --domain pseudo-elements.surge.sh",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "sass css/style.scss dist/style.css",
+    "build:js": "uglifyjs bower_components/reveal.js/lib/js/head.min.js bower_components/reveal.js/js/reveal.js -o ./dist/script.js",
+    "build": "npm run build:js && npm run build:css",
+    "start": "npm run build && http-server"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "surge": "^0.18.0",
+    "uglifyjs": "^2.4.10"
+  }
+}
